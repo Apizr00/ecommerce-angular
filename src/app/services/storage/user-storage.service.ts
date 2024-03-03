@@ -19,4 +19,10 @@ export class UserStorageService {
     window.localStorage.removeItem(USER);
     window.localStorage.setItem(TOKEN, JSON.stringify(user));
   }
+
+  static getToken(): string{
+    return localStorage.getItem(TOKEN);
+  }
+
+  static
 }

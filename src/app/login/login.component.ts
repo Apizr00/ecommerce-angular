@@ -21,7 +21,7 @@ export class LoginComponent {
     private router: Router
   ) { }
 
-  ngOnIt(): void {
+  ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required]],
       password: [null, [Validators.required]],
