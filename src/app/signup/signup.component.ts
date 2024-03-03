@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
 
-  singupform!: FormGroup;
+  signupForm!: FormGroup;
   hidePassword = true;
 
   constructor(private fb: FormBuilder,
@@ -21,7 +22,7 @@ export class SignupComponent {
   }
 
   ngOnInit(): void{
-    this.singupform = this.fb.group({
+    this.signupForm = this.fb.group({
       name:[null, [Validators.required]],
       email:[null, [Validators.required, Validators.email]],
       password : [null, [Validators.required]],
@@ -34,15 +35,15 @@ export class SignupComponent {
   }
 
   onSubmit(): void{
-    const password = this.singupform.get('password')?.value;
-    const confirmPassword = this.singupform.get('confirmpassword')?.value;
+    const password = this.signupForm.get('password')?.value;
+    const confirmPassword = this.signupForm.get('confirmpassword')?.value;
 
     if(password !== confirmPassword){
       this.snackBar.open('Passwords do not match.', 'close',{duration:500, panelClass:'error-snackBar' });
       return;
     }
 
-    this.authService.register(this.singupform.value).subscribe(
+    this.authService.register(this.signupForm.value).subscribe(
       (response) =>{
         this.snackBar.open('Sign-up successful', 'close',{duration: 5000 });
         this.router.navigateByUrl("/login");

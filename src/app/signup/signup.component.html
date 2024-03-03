@@ -8,7 +8,7 @@
                     <mat-label>Name</mat-label>
                     <input matInput formControlName="name" placeholder="Name" required>
 
-                    <mat-error *ngIf="singupFrom.get('name').invalid && signupForm.get('name').touched">
+                    <mat-error *ngIf="signupForm.get('name').invalid && signupForm.get('name').touched">
                         Please enter a valid name.
                     </mat-error>
                 </mat-form-field>
@@ -17,7 +17,7 @@
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email" placeholder="email" required>
 
-                    <mat-error *ngIf="singupFrom.get('email').invalid && signupForm.get('email').touched">
+                    <mat-error *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">
                         Please enter a valid email.
                     </mat-error>
                 </mat-form-field>
@@ -32,7 +32,7 @@
 
                     </button>
 
-                    <mat-error *ngIf="singupFrom.get('password').invalid && signupForm.get('password').touched">
+                    <mat-error *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">
                         Please enter a valid password.
                     </mat-error>
                 </mat-form-field>
@@ -46,7 +46,7 @@
                         <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
 
-                    <mat-error *ngIf="singupFrom.get('confirmpassword').invalid && signupForm.get('confirmpassword').touched">
+                    <mat-error *ngIf="signupForm.get('confirmpassword').invalid && signupForm.get('confirmpassword').touched">
                         Please enter a valid confirm password.
                     </mat-error>
                 </mat-form-field>
