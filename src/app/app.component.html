@@ -1,17 +1,17 @@
 <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Beluchi Ecommerce</span>
+    <span class="Madimi">Coconut.Cosmetics</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/order">Track Order</button>
-    <button mat-button routerLink="/signup">Register</button>
-    <button mat-button routerLink="/login">Login</button>
+    <button mat-button routerLink="/order"class="Madimi">Track Order</button>
+    <button mat-button routerLink="/signup" class="Madimi">SignUp</button>
+    <button mat-button routerLink="/login" class="Madimi">Login</button>
   </mat-toolbar>
 </div>
 
 
 <div *ngIf="isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Beluchi Ecommerce</span>
+    <span class="navbar-brand">Coconut.Cosmetics</span>
     <span class="spacer"></span>
     <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
     <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
@@ -25,7 +25,7 @@
 
 <div *ngIf="isCustomerLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Beluchi Ecommerce</span>
+    <span class="navbar-brand">Coconut.Cosmetics</span>
     <span class="spacer"></span>
     <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
     <button mat-button routerLink="/customer/cart" routerLinkActive="active">My Cart</button>
@@ -35,6 +35,5 @@
     <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
   </mat-toolbar>
 </div>
-
 
 <router-outlet></router-outlet>
