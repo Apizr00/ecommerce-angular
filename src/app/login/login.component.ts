@@ -39,11 +39,14 @@ export class LoginComponent {
 
     this.authService.login(username, password).subscribe(
       (res) => {
-       if(UserStorageService.isAdminLoggedIn()){
-        this.router.navigateByUrl('admin/dashboard');
-       }else if(UserStorageService.isCustomerLoggedIn()){
-        this.router.navigateByUrl('customer/dashboard');
-       }
+        if (UserStorageService.isAdminLoggedIn()) {
+          this.router.navigateByUrl('admin/dashboard');
+          this.snackBar.open('Hello Admin', 'ok', { duration: 5000 });
+        } else if (UserStorageService.isCustomerLoggedIn()) {
+          this.router.navigateByUrl('customer/dashboard');
+          this.snackBar.open('login succesfull', 'ok', { duration: 5000 });
+        }
+
       },
       (error) => {
         this.snackBar.open('Bad credentials', 'ERROR', { duration: 5000 });
