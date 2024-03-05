@@ -31,3 +31,97 @@ button.active{
 .custome-toolbar{
     background-color: #ff0000;
 }
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Fade animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* The dots/bullets */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background-color: #717171;
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Content section */
+  .content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  body {
+    background-image: url('/assets/coco.png'); /* Specify the URL of your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+  }
+  
+  
+  .welcome-container {
+    text-align: center; /* Aligns text center horizontally */
+    margin-top: 50px; /* Adjust the margin as needed */
+  }
+  
+  .welcome-container h1 {
+    font-size: 36px; /* Example font size for the heading */
+  }
+  
+  .welcome-container p {
+    font-size: 18px; /* Example font size for paragraphs */
+    margin-bottom: 20px; /* Adds space between paragraphs */
+  }
