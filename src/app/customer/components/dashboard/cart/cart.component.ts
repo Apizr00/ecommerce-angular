@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomerService } from 'src/app/customer/services/customer.service';
+import { PlaceOrderComponent } from '../../place-order/place-order.component';
 
 @Component({
   selector: 'app-cart',
@@ -67,6 +68,10 @@ export class CartComponent {
       this.snackBar.open('Product Quantity Decreased', 'Close', { duration: 5000 });
       this.getCart();
     })
+  }
+
+  placeOrder() {
+    this.dialog.open(PlaceOrderComponent);
   }
 
 }
