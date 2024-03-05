@@ -37,13 +37,13 @@ export class AdminService {
   }
 
   getAllproductsByName(name:any): Observable<any> {
-    return this.http.get(BASIC_URL + 'api/admin/search/${name}', {
+    return this.http.get(BASIC_URL + `api/admin/search/${name}`, {
       headers: this.createAuthorizationHeader(),
     })
   }
 
   deleteProduct(productId: any): Observable<any> {
-    return this.http.delete(BASIC_URL + 'api/admin/product/${productId}',  {
+    return this.http.delete(BASIC_URL + `api/admin/product/${productId}`,  {
       headers: this.createAuthorizationHeader(),
     })
   }
@@ -61,7 +61,13 @@ export class AdminService {
   }
 
    getPlacedOrders(): Observable<any> {
-    return this.http.get(BASIC_URL + 'api/admin/placeOrders', {
+    return this.http.get(BASIC_URL + 'api/admin/placedOrders', {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  changeOrderStatus(orderId: number, status: string): Observable<any> {
+    return this.http.get(BASIC_URL + `api/admin/order/${orderId}/${status}`, {
       headers: this.createAuthorizationHeader(),
     })
   }
