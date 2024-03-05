@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'baluchiecommerce';
 
-  isCustomerLoggedIn :boolean = UserStorageService.isCustomerLoggedIn();
+  isCustomerLoggedIn : boolean = UserStorageService.isCustomerLoggedIn();
   isAdminLoggedIn : boolean = UserStorageService.isAdminLoggedIn();
 
   constructor(private router: Router) {}

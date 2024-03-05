@@ -12,11 +12,12 @@
                         </div>
                         <div class="item-price">{{ item.price | currency }}</div>
                         <div class="quantity-controls">
-                            <button mat-icon-button [disabled]="item.quantity == 1">
+                            <button mat-icon-button [disabled]="item.quantity == 1"
+                                (click)="decreaseQuantity(item.productId)">
                                 <mat-icon>remove_circle_outline</mat-icon>
                             </button>
                             <span class="quantity">{{ item.quantity }}</span>
-                            <button mat-icon-button>
+                            <button mat-icon-button (click)="increaseQuantity(item.productId)">
                                 <mat-icon>add_circle_outline</mat-icon>
                             </button>
                         </div>
@@ -33,12 +34,28 @@
         <div class="total-price">
             Amount: {{ order.amount | currency}}
         </div>
+        <div class="total-price" *ngIf="order.couponName != null">
+            Coupon Applied: {{ order.couponName}}
+        </div>
         <div>
-            <button mat-raised-button color="primary" > Place Order</button>
+            <button mat-raised-button color="primary" (click)="placeOrder()"> Place Order</button>
         </div>
 
     </div>
-  
+
+    <div class="container" *ngIf="order.couponName == null">
+        <form [formGroup]="couponForm" (ngSubmit)="applyCoupon()">
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Code</mat-label>
+                <input matInput type="text" placeholder="Code" formControlName="code">
+                <mat-error *ngIf="couponForm.get('code')?.hasError('required')">This Input Is Required</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Apply Coupon</button>
+
+        </form>
+    </div>
+
 </div>
 
 <ng-template #emptyCart>
@@ -47,4 +64,3 @@
         <span> nothing to see here.</span>
     </div>
 </ng-template>
-
