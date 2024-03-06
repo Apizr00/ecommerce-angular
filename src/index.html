@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body class="mat-typography">
   <app-root></app-root>
@@ -18,7 +19,32 @@
     <p>Welcome to our online store where you can find a wide range of coconut-based cosmetics products that will nourish and rejuvenate your skin and hair.</p>
     <p>Explore our collection and discover the natural beauty benefits of coconut.</p>
   </div>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="coco.png" alt="Denim Jeans">
+      <h1>Tailored Jeans</h1>
+      <p class="price">$19.99</p>
+      <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+      <p><button>Add to Cart</button></p>
+    </div>
+
+    <div class="card">
+      <img src="\src\assets\2.pngg" alt="Denim Jeans">
+      <h1>Tailored Jeans</h1>
+      <p class="price">$19.99</p>
+      <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+      <p><button>Add to Cart</button></p>
+    </div>
   
- 
+    <div class="card">
+      <img [src]="'/assets/img/1.png'" alt="Bar Soap">
+      <h1>Bar Soap</h1>
+      <p class="price">$19.99</p>
+      <p>Some text about the soap. Super slim and comfy lorem ipsum lorem soapum. Lorem jeamsun soap lorem soapum.</p>
+      <p><button>Add to Cart</button></p>
+    </div>
+    
+  </div>
 </body>
 </html>
