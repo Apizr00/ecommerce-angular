@@ -27,24 +27,28 @@ export class PostCategoryComponent {
     })
   }
 
-  addCategory(): void{
-    if(this.categoryForm.valid){
-      this.adminService.addCategory(this.categoryForm.value).subscribe((res) =>{
-        if(res.id != null){
-          this.snackBar.open('Category Posted Successfully','Close',{
+  addCategory(): void {
+    if (this.categoryForm.valid) {
+      // Log the data before sending the HTTP request
+      console.log('Data being sent:', this.categoryForm.getRawValue());
+
+      // Make the HTTP request to add the category
+      this.adminService.addCategory(this.categoryForm.value).subscribe((res) => {
+        if (res.id != null) {
+          this.snackBar.open('Category Posted Successfully', 'Close', {
             duration: 5000
           });
           this.router.navigateByUrl('/admin/dashboard');
-        }else{
-         this.snackBar.open(res.message, 'close',{
-          duration: 5000,
-          panelClass: 'error-snackbar'
-         });
+        } else {
+          this.snackBar.open(res.message, 'close', {
+            duration: 5000,
+            panelClass: 'error-snackbar'
+          });
         }
-      })    
-    }else{
+      });
+    } else {
       this.categoryForm.markAllAsTouched();
     }
-  }
+}
 
 }
