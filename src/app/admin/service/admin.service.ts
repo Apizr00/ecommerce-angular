@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { UserStorageService } from 'src/app/services/storage/user-storage.service';
 
 const BASIC_URL = "http://localhost:8080/";
@@ -15,8 +15,11 @@ export class AdminService {
   addCategory(categoryDto: any): Observable<any> {
     return this.http.post(BASIC_URL + 'api/admin/category', categoryDto, {
       headers: this.createAuthorizationHeader(),
-    })
+    }).pipe(
+      catchError(this.handleError)
+    );
   }
+
 
   getAllCategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin', {
@@ -82,6 +85,19 @@ export class AdminService {
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + UserStorageService.getToken()
     )
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    let errorMessage = 'Unknown error occurred';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side error
+      errorMessage = `Client Side error ,Error: ${error.error.message}`;
+    } else {
+      // Server-side error
+      errorMessage = `Server side error, Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(errorMessage);
   }
 
 
