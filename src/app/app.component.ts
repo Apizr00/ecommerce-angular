@@ -21,7 +21,12 @@ export class AppComponent {
       this.isAdminLoggedIn = UserStorageService.isAdminLoggedIn();
     })
   }
-
+  scrollTo(section: string): void {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+  }
   logout(){
     UserStorageService.signOut();
     this.router.navigateByUrl('login');

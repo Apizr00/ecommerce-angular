@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: gray;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @font-face {
     font-family: Madimi One;
@@ -11,3 +11,155 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 .Madimi{
     font-family: Madimi One;
 }
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: chocolate;
+}
+
+.navbar-brand{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 16px;
+    color: black;
+    
+}
+
+.spacer{
+    flex: 1;
+}
+
+button{
+    color: white;
+    text-transform: uppercase;
+    margin-left: 8px;
+    background-color: black;
+}
+
+button.active{
+    font-weight: 600;
+}
+
+.custome-toolbar{
+    background-color: #ff0000;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Fade animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* The dots/bullets */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Content section */
+  .content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  body {
+    background-image: url('/assets/coco.png'); /* Specify the URL of your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+  }
+  
+  
+  .welcome-container {
+    text-align: center; /* Aligns text center horizontally */
+    margin-top: 50px; /* Adjust the margin as needed */
+    color: chocolate;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .welcome-container h1 {
+    font-size: 36px; /* Example font size for the heading */
+    font-family: cursive;
+  }
+  
+  .welcome-container p {
+    font-size: 18px; /* Example font size for paragraphs */
+    margin-bottom: 20px; /* Adds space between paragraphs */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+        .image-container {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 20px;
+        }
+    
+        .image-wrapper {
+          text-align: center;
+        }
+    
+        .image-wrapper img {
+          width: 300px;
+          /* Adjust the width as needed */
+          height: auto;
+          border-radius: 10px;
+          margin: 10px;
+        }
+    
+        .image-caption {
+          margin-top: 5px;
+          font-size: 14px;
+          color: #666;
+        }
